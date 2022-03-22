@@ -17,6 +17,9 @@
 		F055271027EA5FDF00666A22 /* Work_Flow_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055270F27EA5FDF00666A22 /* Work_Flow_TimeTests.swift */; };
 		F055271A27EA5FDF00666A22 /* Work_Flow_TimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055271927EA5FDF00666A22 /* Work_Flow_TimeUITests.swift */; };
 		F055271C27EA5FDF00666A22 /* Work_Flow_TimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055271B27EA5FDF00666A22 /* Work_Flow_TimeUITestsLaunchTests.swift */; };
+		F055272D27EA615400666A22 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055272C27EA615400666A22 /* DataViewController.swift */; };
+		F055272F27EA620000666A22 /* InfoForDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055272E27EA620000666A22 /* InfoForDataViewController.swift */; };
+		F055273127EA665700666A22 /* WorkTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055273027EA665700666A22 /* WorkTaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		F055271527EA5FDF00666A22 /* Work Flow TimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Work Flow TimeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F055271927EA5FDF00666A22 /* Work_Flow_TimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work_Flow_TimeUITests.swift; sourceTree = "<group>"; };
 		F055271B27EA5FDF00666A22 /* Work_Flow_TimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work_Flow_TimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F055272C27EA615400666A22 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		F055272E27EA620000666A22 /* InfoForDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoForDataViewController.swift; sourceTree = "<group>"; };
+		F055273027EA665700666A22 /* WorkTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +107,11 @@
 		F05526F427EA5FDA00666A22 /* Work Flow Time */ = {
 			isa = PBXGroup;
 			children = (
-				F05526F527EA5FDA00666A22 /* AppDelegate.swift */,
-				F05526F727EA5FDA00666A22 /* SceneDelegate.swift */,
-				F05526F927EA5FDA00666A22 /* ViewController.swift */,
+				F055272B27EA602800666A22 /* Others */,
+				F055272A27EA601500666A22 /* Cells */,
+				F055272927EA600B00666A22 /* Controllers */,
+				F055272827EA600300666A22 /* Models */,
 				F05526FB27EA5FDA00666A22 /* Main.storyboard */,
-				F055270127EA5FDF00666A22 /* Assets.xcassets */,
-				F055270327EA5FDF00666A22 /* LaunchScreen.storyboard */,
 				F055270627EA5FDF00666A22 /* Info.plist */,
 				F05526FE27EA5FDA00666A22 /* Work_Flow_Time.xcdatamodeld */,
 			);
@@ -128,6 +133,42 @@
 				F055271B27EA5FDF00666A22 /* Work_Flow_TimeUITestsLaunchTests.swift */,
 			);
 			path = "Work Flow TimeUITests";
+			sourceTree = "<group>";
+		};
+		F055272827EA600300666A22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F055272927EA600B00666A22 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F05526F927EA5FDA00666A22 /* ViewController.swift */,
+				F055272C27EA615400666A22 /* DataViewController.swift */,
+				F055272E27EA620000666A22 /* InfoForDataViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F055272A27EA601500666A22 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F055273027EA665700666A22 /* WorkTaskCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F055272B27EA602800666A22 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				F05526F527EA5FDA00666A22 /* AppDelegate.swift */,
+				F05526F727EA5FDA00666A22 /* SceneDelegate.swift */,
+				F055270127EA5FDF00666A22 /* Assets.xcassets */,
+				F055270327EA5FDF00666A22 /* LaunchScreen.storyboard */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +302,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F055272F27EA620000666A22 /* InfoForDataViewController.swift in Sources */,
 				F05526FA27EA5FDA00666A22 /* ViewController.swift in Sources */,
+				F055273127EA665700666A22 /* WorkTaskCell.swift in Sources */,
 				F05526F627EA5FDA00666A22 /* AppDelegate.swift in Sources */,
+				F055272D27EA615400666A22 /* DataViewController.swift in Sources */,
 				F05526F827EA5FDA00666A22 /* SceneDelegate.swift in Sources */,
 				F055270027EA5FDA00666A22 /* Work_Flow_Time.xcdatamodeld in Sources */,
 			);
@@ -460,7 +504,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -488,7 +532,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
