@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153D8D977C3A84C47C15FBDF /* Pods_Work_Flow_Time.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BE7C0F8FDA65A6950F984F /* Pods_Work_Flow_Time.framework */; };
+		562D89DA1E20BD4A0A6C030B /* Pods_Work_Flow_Time_Work_Flow_TimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F975ADE56488C5F3FCE819 /* Pods_Work_Flow_Time_Work_Flow_TimeUITests.framework */; };
+		6AEC854FCD40CE8B5502AC31 /* Pods_Work_Flow_TimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328F86C24AE44938F7EC6375 /* Pods_Work_Flow_TimeTests.framework */; };
 		F05526F627EA5FDA00666A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05526F527EA5FDA00666A22 /* AppDelegate.swift */; };
 		F05526F827EA5FDA00666A22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05526F727EA5FDA00666A22 /* SceneDelegate.swift */; };
 		F05526FA27EA5FDA00666A22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05526F927EA5FDA00666A22 /* ViewController.swift */; };
@@ -18,8 +21,11 @@
 		F055271A27EA5FDF00666A22 /* Work_Flow_TimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055271927EA5FDF00666A22 /* Work_Flow_TimeUITests.swift */; };
 		F055271C27EA5FDF00666A22 /* Work_Flow_TimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055271B27EA5FDF00666A22 /* Work_Flow_TimeUITestsLaunchTests.swift */; };
 		F055272D27EA615400666A22 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055272C27EA615400666A22 /* DataViewController.swift */; };
-		F055272F27EA620000666A22 /* InfoForDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055272E27EA620000666A22 /* InfoForDataViewController.swift */; };
-		F055273127EA665700666A22 /* WorkTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055273027EA665700666A22 /* WorkTaskCell.swift */; };
+		F055272F27EA620000666A22 /* TimesForWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055272E27EA620000666A22 /* TimesForWorkViewController.swift */; };
+		F055273127EA665700666A22 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055273027EA665700666A22 /* FolderCell.swift */; };
+		F096CA4827EFAC4200F44032 /* TimeWorkModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096CA4727EFAC4200F44032 /* TimeWorkModelRealm.swift */; };
+		F096CA4A27EFACF800F44032 /* AlertTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096CA4927EFACF800F44032 /* AlertTaskModel.swift */; };
+		F0A9C99227F39713005B81D0 /* TimesWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9C99127F39713005B81D0 /* TimesWorkCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E3AF64393F281AA7249F41B /* Pods-Work Flow TimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work Flow TimeTests.release.xcconfig"; path = "Target Support Files/Pods-Work Flow TimeTests/Pods-Work Flow TimeTests.release.xcconfig"; sourceTree = "<group>"; };
+		2EBBA02CCBA39C685F88C224 /* Pods-Work Flow Time-Work Flow TimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work Flow Time-Work Flow TimeUITests.release.xcconfig"; path = "Target Support Files/Pods-Work Flow Time-Work Flow TimeUITests/Pods-Work Flow Time-Work Flow TimeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		328F86C24AE44938F7EC6375 /* Pods_Work_Flow_TimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Work_Flow_TimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47B5CEDFFD8996BE025D526C /* Pods-Work Flow TimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work Flow TimeTests.debug.xcconfig"; path = "Target Support Files/Pods-Work Flow TimeTests/Pods-Work Flow TimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		53B34C4A99A94CB54325C2A6 /* Pods-Work Flow Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work Flow Time.debug.xcconfig"; path = "Target Support Files/Pods-Work Flow Time/Pods-Work Flow Time.debug.xcconfig"; sourceTree = "<group>"; };
+		63C7D25759B4996DC11B4C82 /* Pods-Work Flow Time-Work Flow TimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work Flow Time-Work Flow TimeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Work Flow Time-Work Flow TimeUITests/Pods-Work Flow Time-Work Flow TimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		76F975ADE56488C5F3FCE819 /* Pods_Work_Flow_Time_Work_Flow_TimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Work_Flow_Time_Work_Flow_TimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D95F102F170715DFAEFD12F /* Pods-Work Flow Time.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work Flow Time.release.xcconfig"; path = "Target Support Files/Pods-Work Flow Time/Pods-Work Flow Time.release.xcconfig"; sourceTree = "<group>"; };
+		A3BE7C0F8FDA65A6950F984F /* Pods_Work_Flow_Time.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Work_Flow_Time.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05526F227EA5FDA00666A22 /* Work Flow Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Work Flow Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05526F527EA5FDA00666A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F05526F727EA5FDA00666A22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,8 +70,11 @@
 		F055271927EA5FDF00666A22 /* Work_Flow_TimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work_Flow_TimeUITests.swift; sourceTree = "<group>"; };
 		F055271B27EA5FDF00666A22 /* Work_Flow_TimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work_Flow_TimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F055272C27EA615400666A22 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		F055272E27EA620000666A22 /* InfoForDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoForDataViewController.swift; sourceTree = "<group>"; };
-		F055273027EA665700666A22 /* WorkTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTaskCell.swift; sourceTree = "<group>"; };
+		F055272E27EA620000666A22 /* TimesForWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesForWorkViewController.swift; sourceTree = "<group>"; };
+		F055273027EA665700666A22 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		F096CA4727EFAC4200F44032 /* TimeWorkModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWorkModelRealm.swift; sourceTree = "<group>"; };
+		F096CA4927EFACF800F44032 /* AlertTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTaskModel.swift; sourceTree = "<group>"; };
+		F0A9C99127F39713005B81D0 /* TimesWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesWorkCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				153D8D977C3A84C47C15FBDF /* Pods_Work_Flow_Time.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AEC854FCD40CE8B5502AC31 /* Pods_Work_Flow_TimeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +98,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				562D89DA1E20BD4A0A6C030B /* Pods_Work_Flow_Time_Work_Flow_TimeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1646B22E1C650F9C8FE91369 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53B34C4A99A94CB54325C2A6 /* Pods-Work Flow Time.debug.xcconfig */,
+				8D95F102F170715DFAEFD12F /* Pods-Work Flow Time.release.xcconfig */,
+				63C7D25759B4996DC11B4C82 /* Pods-Work Flow Time-Work Flow TimeUITests.debug.xcconfig */,
+				2EBBA02CCBA39C685F88C224 /* Pods-Work Flow Time-Work Flow TimeUITests.release.xcconfig */,
+				47B5CEDFFD8996BE025D526C /* Pods-Work Flow TimeTests.debug.xcconfig */,
+				2E3AF64393F281AA7249F41B /* Pods-Work Flow TimeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A3E0A2CA78F4FF41F96E8FCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3BE7C0F8FDA65A6950F984F /* Pods_Work_Flow_Time.framework */,
+				76F975ADE56488C5F3FCE819 /* Pods_Work_Flow_Time_Work_Flow_TimeUITests.framework */,
+				328F86C24AE44938F7EC6375 /* Pods_Work_Flow_TimeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F05526E927EA5FDA00666A22 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +135,8 @@
 				F055270E27EA5FDF00666A22 /* Work Flow TimeTests */,
 				F055271827EA5FDF00666A22 /* Work Flow TimeUITests */,
 				F05526F327EA5FDA00666A22 /* Products */,
+				1646B22E1C650F9C8FE91369 /* Pods */,
+				A3E0A2CA78F4FF41F96E8FCD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +184,8 @@
 		F055272827EA600300666A22 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F096CA4727EFAC4200F44032 /* TimeWorkModelRealm.swift */,
+				F096CA4927EFACF800F44032 /* AlertTaskModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,7 +195,7 @@
 			children = (
 				F05526F927EA5FDA00666A22 /* ViewController.swift */,
 				F055272C27EA615400666A22 /* DataViewController.swift */,
-				F055272E27EA620000666A22 /* InfoForDataViewController.swift */,
+				F055272E27EA620000666A22 /* TimesForWorkViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,7 +203,8 @@
 		F055272A27EA601500666A22 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F055273027EA665700666A22 /* WorkTaskCell.swift */,
+				F055273027EA665700666A22 /* FolderCell.swift */,
+				F0A9C99127F39713005B81D0 /* TimesWorkCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -178,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F055271F27EA5FDF00666A22 /* Build configuration list for PBXNativeTarget "Work Flow Time" */;
 			buildPhases = (
+				8A58D988D73E80F048155138 /* [CP] Check Pods Manifest.lock */,
 				F05526EE27EA5FDA00666A22 /* Sources */,
 				F05526EF27EA5FDA00666A22 /* Frameworks */,
 				F05526F027EA5FDA00666A22 /* Resources */,
+				B3AB4FA0C4072C9C38E8C43D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +246,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F055272227EA5FDF00666A22 /* Build configuration list for PBXNativeTarget "Work Flow TimeTests" */;
 			buildPhases = (
+				91B45A429FE98645192AA02B /* [CP] Check Pods Manifest.lock */,
 				F055270727EA5FDF00666A22 /* Sources */,
 				F055270827EA5FDF00666A22 /* Frameworks */,
 				F055270927EA5FDF00666A22 /* Resources */,
@@ -213,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F055272527EA5FDF00666A22 /* Build configuration list for PBXNativeTarget "Work Flow TimeUITests" */;
 			buildPhases = (
+				51B95A7C7024D2EAD3CD5723 /* [CP] Check Pods Manifest.lock */,
 				F055271127EA5FDF00666A22 /* Sources */,
 				F055271227EA5FDF00666A22 /* Frameworks */,
 				F055271327EA5FDF00666A22 /* Resources */,
+				0142EDEAFEDBE70198DBA07C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,17 +351,123 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0142EDEAFEDBE70198DBA07C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Work Flow Time-Work Flow TimeUITests/Pods-Work Flow Time-Work Flow TimeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Work Flow Time-Work Flow TimeUITests/Pods-Work Flow Time-Work Flow TimeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Work Flow Time-Work Flow TimeUITests/Pods-Work Flow Time-Work Flow TimeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51B95A7C7024D2EAD3CD5723 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Work Flow Time-Work Flow TimeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A58D988D73E80F048155138 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Work Flow Time-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91B45A429FE98645192AA02B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Work Flow TimeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3AB4FA0C4072C9C38E8C43D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Work Flow Time/Pods-Work Flow Time-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Work Flow Time/Pods-Work Flow Time-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Work Flow Time/Pods-Work Flow Time-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F05526EE27EA5FDA00666A22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F055272F27EA620000666A22 /* InfoForDataViewController.swift in Sources */,
+				F055272F27EA620000666A22 /* TimesForWorkViewController.swift in Sources */,
 				F05526FA27EA5FDA00666A22 /* ViewController.swift in Sources */,
-				F055273127EA665700666A22 /* WorkTaskCell.swift in Sources */,
+				F055273127EA665700666A22 /* FolderCell.swift in Sources */,
+				F096CA4827EFAC4200F44032 /* TimeWorkModelRealm.swift in Sources */,
+				F0A9C99227F39713005B81D0 /* TimesWorkCell.swift in Sources */,
 				F05526F627EA5FDA00666A22 /* AppDelegate.swift in Sources */,
 				F055272D27EA615400666A22 /* DataViewController.swift in Sources */,
 				F05526F827EA5FDA00666A22 /* SceneDelegate.swift in Sources */,
+				F096CA4A27EFACF800F44032 /* AlertTaskModel.swift in Sources */,
 				F055270027EA5FDA00666A22 /* Work_Flow_Time.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,8 +642,9 @@
 		};
 		F055272027EA5FDF00666A22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53B34C4A99A94CB54325C2A6 /* Pods-Work Flow Time.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -510,8 +671,9 @@
 		};
 		F055272127EA5FDF00666A22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D95F102F170715DFAEFD12F /* Pods-Work Flow Time.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -538,6 +700,7 @@
 		};
 		F055272327EA5FDF00666A22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47B5CEDFFD8996BE025D526C /* Pods-Work Flow TimeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -558,6 +721,7 @@
 		};
 		F055272427EA5FDF00666A22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E3AF64393F281AA7249F41B /* Pods-Work Flow TimeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -578,6 +742,7 @@
 		};
 		F055272627EA5FDF00666A22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63C7D25759B4996DC11B4C82 /* Pods-Work Flow Time-Work Flow TimeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -596,6 +761,7 @@
 		};
 		F055272727EA5FDF00666A22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EBBA02CCBA39C685F88C224 /* Pods-Work Flow Time-Work Flow TimeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
