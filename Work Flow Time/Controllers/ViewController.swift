@@ -129,6 +129,7 @@ class ViewController: UIViewController {
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         startButtonOutlet.layer.cornerRadius = 50
         stopButtonOutlet.layer.cornerRadius = 50
 
@@ -138,7 +139,6 @@ class ViewController: UIViewController {
         
         result = realm.objects(FolderTasksModelRealm.self)
         resultTasks = realm.objects(TimeWorkModelRealm.self)
-        
     }
 }
 
