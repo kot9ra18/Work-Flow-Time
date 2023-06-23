@@ -163,7 +163,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let infoForTasksViewController = self.storyboard?.instantiateViewController(withIdentifier: "Info") as! TimesForWorkViewController
         
         infoForTasksViewController.id = indexPath.row
-        
+//        let vc = TimesForWorkViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//        vc.id = indexPath.row
+        //show(infoForTasksViewController, sender: nil)
         self.present(infoForTasksViewController, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
         

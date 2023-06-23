@@ -7,7 +7,7 @@
 
 import UIKit
 import RealmSwift
-import CloudKit
+//import CloudKit
 
 class TimesForWorkViewController: UIViewController, VCDelegate {
     func update(data: FolderTasksModelRealm) {
@@ -69,6 +69,7 @@ class TimesForWorkViewController: UIViewController, VCDelegate {
        
     }
     
+   let context = UIContextualAction()
     
     func addAlertController(){
         let alert = UIAlertController(title: "New work", message: "Please to fill place", preferredStyle: .alert)
@@ -173,7 +174,10 @@ extension TimesForWorkViewController: UITableViewDelegate, UITableViewDataSource
         
         return [deleteAction]
     }
+    
+    
 
+    
     
 }
 
