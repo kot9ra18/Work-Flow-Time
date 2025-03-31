@@ -14,8 +14,12 @@ class TimesWorkCell: UITableViewCell {
     @IBOutlet weak var timeInfoLabel: UILabel!
     
     func initCell(data: TimeWorkModelRealm){
+        
         dateInfoLabel.text = data.nameTask
+        timeInfoLabel.text? = "00:00:00"
         timeInfoLabel.text = data.totalTimeTask
+        
+        
         //totalTimeForThisTask.text = String(data.timeThemes)
        // totalTimeForThisTask.text = "\(data.totalTimeHour):\(data.totalTimeMin):\(data.totalTimeSec)"
     }

@@ -9,10 +9,14 @@ import UIKit
 import RealmSwift
 //import CloudKit
 
-class TimesForWorkViewController: UIViewController, VCDelegate {
-    func update(data: FolderTasksModelRealm) {
-        
-    }
+protocol TimesForWorkViewControllerDelegate: AnyObject {
+    func timesForWorkViewControllerDidSaveData()
+}
+
+class TimesForWorkViewController: UIViewController {
+    
+    
+    weak var delegate: TimesForWorkVCDelegate?
     
     
     var arrNameWork: [String] = []
@@ -26,6 +30,7 @@ class TimesForWorkViewController: UIViewController, VCDelegate {
     @IBOutlet weak var stopNewTaskButtonOutlet: UIButton!
     @IBOutlet weak var startNewTaskButtonOutlet: UIButton!
     
+    
     var id = Int()
     var timerWork = Timer()
     var result: Results<TimeWorkModelRealm>!
@@ -36,6 +41,7 @@ class TimesForWorkViewController: UIViewController, VCDelegate {
     var durationSec = Int()
 
     var titleTask = "123"
+    var countedTable = 0
     
     
     @IBAction func startNewTaskButtonAction(_ sender: Any) {
@@ -54,22 +60,19 @@ class TimesForWorkViewController: UIViewController, VCDelegate {
     @objc func actionTimer(){
 
         durationSec += 1
-        timeNewTaskLabel.text = "\(durationHour):\(durationMin):\(durationSec)"
-
-        if durationSec > 9 {
+        timeNewTaskLabel.text = String(format: "%02d:%02d:%02d", durationHour, durationMin, durationSec)
+        if durationSec > 59 {
             durationSec = 0
             durationMin += 1
-            timeNewTaskLabel.text = "\(durationHour):\(durationMin):\(durationSec)"
-        }
-        if durationMin > 9 {
+            timeNewTaskLabel.text = String(format: "%02d:%02d:%02d", durationHour, durationMin, durationSec)        }
+        if durationMin > 59 {
             durationMin = 0
             durationHour += 1
-            timeNewTaskLabel.text = "\(durationHour):\(durationMin):\(durationSec)"
-        }
+            timeNewTaskLabel.text = String(format: "%02d:%02d:%02d", durationHour, durationMin, durationSec)        }
        
     }
     
-   let context = UIContextualAction()
+ //  let context = UIContextualAction()
     
     func addAlertController(){
         let alert = UIAlertController(title: "New work", message: "Please to fill place", preferredStyle: .alert)
@@ -92,23 +95,25 @@ class TimesForWorkViewController: UIViewController, VCDelegate {
             try! self.realm.write {
                 self.realm.add(task)
                 self.resultFolder[self.id].timeWorks.append(task)
-                // self.realm.add(mainTask)
+
                 }
+           
             print(task)
             self.tableViewInfo.reloadData()
             
             
-            self.timeNewTaskLabel.text = "0"
+            self.timeNewTaskLabel.text = "00:00:00"
             self.startNewTaskButtonOutlet.isEnabled = true
             UIView.animate(withDuration: 0.3) {
                 self.startNewTaskButtonOutlet.isHidden = false
             }
+            
             self.tableViewInfo.reloadData()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { cancel in
             self.timerWork.invalidate()
-            self.timeNewTaskLabel.text = "0"
+            self.timeNewTaskLabel.text = "00:00:00"
             self.startNewTaskButtonOutlet.isEnabled = true
             UIView.animate(withDuration: 0.3) {
                 self.startNewTaskButtonOutlet.isHidden = false
@@ -119,24 +124,30 @@ class TimesForWorkViewController: UIViewController, VCDelegate {
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
+
     
+     // MARK: - ViewWillDissapear
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.didUpdateData(data: countedTable)
+    }
+
     //  MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        timeNewTaskLabel.text = "00:00:00"
         presentationController?.delegate = self
         
         self.startNewTaskButtonOutlet.layer.cornerRadius = 20
+        self.startNewTaskButtonOutlet.titleLabel?.text = "Start"
         self.stopNewTaskButtonOutlet.layer.cornerRadius = 20
+        self.stopNewTaskButtonOutlet.titleLabel?.text = "Stop"
+
         self.title = titleTask
         
         self.result = realm.objects(TimeWorkModelRealm.self)
         self.resultFolder = realm.objects(FolderTasksModelRealm.self)
         
     }
-    
-   
-    
 }
 
 //MARK: - EXTENTION
@@ -159,6 +170,10 @@ extension TimesForWorkViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let vc = DataViewController()
+       
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
@@ -169,16 +184,9 @@ extension TimesForWorkViewController: UITableViewDelegate, UITableViewDataSource
                 tableView.reloadData()
             })
         }
-        
-       
-        
+
         return [deleteAction]
     }
-    
-    
-
-    
-    
 }
 
 extension TimesForWorkViewController: UIAdaptivePresentationControllerDelegate{

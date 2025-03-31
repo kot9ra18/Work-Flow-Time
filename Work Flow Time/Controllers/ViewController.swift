@@ -8,11 +8,20 @@
 import UIKit
 import RealmSwift
 
-protocol VCDelegate{
-    func update(data: FolderTasksModelRealm)
+protocol TimesForWorkVCDelegate: AnyObject{
+    func didUpdateData(data: Int)
 }
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, TimesForWorkViewControllerDelegate {
+    
+    func timesForWorkViewControllerDidSaveData() {
+        // Обновление массива result с новыми данными из Realm
+              result = realm.objects(FolderTasksModelRealm.self)
+              
+              // Перезагрузка таблицы, чтобы отобразить новые данные
+              tableView.reloadData()
+    }
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,9 +29,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerView: UIView!
     @IBOutlet weak var startButtonOutlet: UIButton!
     @IBOutlet weak var stopButtonOutlet: UIButton!
-    
-    open var delegate: VCDelegate?
-    
+        
     let workTaskCell = "workTaskIdCell"
     var timer = Timer()
     var durationSec = 0
@@ -32,6 +39,7 @@ class ViewController: UIViewController {
     var realm = try! Realm()
     var result: Results<FolderTasksModelRealm>?
     var resultTasks: Results<TimeWorkModelRealm>?
+ 
     
     
     //  MARK: - Buttons (start and stop)
@@ -59,17 +67,17 @@ class ViewController: UIViewController {
     @objc func actionTimer(){
 
         durationSec += 1
-        timeLabel.text = "\(durationHour):\(durationMin):\(durationSec)"
-       
+        timeLabel.text = String(format: "%02d:%02d:%02d", durationHour, durationMin, durationSec)
+
         if durationSec > 9 {
             durationSec = 0
             durationMin += 1
-            timeLabel.text = "\(durationHour):\(durationMin):\(durationSec)"
+            timeLabel.text = String(format: "%02d:%02d:%02d", durationHour, durationMin, durationSec)
         }
         if durationMin > 9 {
             durationMin = 0
             durationHour += 1
-            timeLabel.text = "\(durationHour):\(durationMin):\(durationSec)"
+            timeLabel.text = String(format: "%02d:%02d:%02d", durationHour, durationMin, durationSec)
         }
        
     }
@@ -105,7 +113,7 @@ class ViewController: UIViewController {
                 }
             self.tableView.reloadData()
             
-            self.timeLabel.text = "0"
+            self.timeLabel.text = "00:00:00"
             self.startButtonOutlet.isEnabled = true
             UIView.animate(withDuration: 0.3) {
                 self.startButtonOutlet.isHidden = false
@@ -114,7 +122,7 @@ class ViewController: UIViewController {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { cancel in
             self.timer.invalidate()
-            self.timeLabel.text = "0"
+            self.timeLabel.text = "00:00:00"
             self.startButtonOutlet.isEnabled = true
             UIView.animate(withDuration: 0.3) {
                 self.startButtonOutlet.isHidden = false
@@ -126,12 +134,41 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func setupViews(){
+        timeLabel.text = "00:00:00"
+        timeLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 36, weight: .bold)
+        timeLabel.textAlignment = .center
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        startButtonOutlet.setTitle("Старт", for: .normal)
+        startButtonOutlet.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        startButtonOutlet.backgroundColor = UIColor.systemGreen.withAlphaComponent(0.7) // Мягкий зеленый цвет
+        startButtonOutlet.setTitleColor(.white, for: .normal)
+        startButtonOutlet.layer.cornerRadius = 15 // Закругленные углы
+        startButtonOutlet.layer.shadowColor = UIColor.black.cgColor // Цвет тени
+        startButtonOutlet.layer.shadowOpacity = 0.3 // Прозрачность тени
+        startButtonOutlet.layer.shadowOffset = CGSize(width: 0, height: 5) // Смещение тени
+        startButtonOutlet.layer.shadowRadius = 10 // Радиус тени
+        startButtonOutlet.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        stopButtonOutlet.setTitle("Стоп", for: .normal)
+        stopButtonOutlet.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        stopButtonOutlet.backgroundColor = UIColor.systemRed.withAlphaComponent(0.7) // Мягкий красный цвет
+        stopButtonOutlet.setTitleColor(.white, for: .normal)
+        stopButtonOutlet.layer.cornerRadius = 15 // Закругленные углы
+        stopButtonOutlet.layer.shadowColor = UIColor.black.cgColor // Цвет тени
+        stopButtonOutlet.layer.shadowOpacity = 0.3 // Прозрачность тени
+        stopButtonOutlet.layer.shadowOffset = CGSize(width: 0, height: 5) // Смещение тени
+        stopButtonOutlet.layer.shadowRadius = 10 // Радиус тени
+        stopButtonOutlet.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        startButtonOutlet.layer.cornerRadius = 50
-        stopButtonOutlet.layer.cornerRadius = 50
+        setupViews()
+        timeLabel.text = "00:00:00"
 
         
         let path = Realm.Configuration.defaultConfiguration.fileURL
@@ -155,35 +192,49 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: workTaskCell) as! FolderCell
         
         cell.initCell(data: realm.objects(FolderTasksModelRealm.self)[indexPath.row])
-        
+       print(realm.objects(FolderTasksModelRealm.self).description)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let infoForTasksViewController = self.storyboard?.instantiateViewController(withIdentifier: "Info") as! TimesForWorkViewController
-        
+
+        infoForTasksViewController.delegate = self
         infoForTasksViewController.id = indexPath.row
-//        let vc = TimesForWorkViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
-//        vc.id = indexPath.row
-        //show(infoForTasksViewController, sender: nil)
-        self.present(infoForTasksViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(infoForTasksViewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
-        let editingRow = result?[indexPath.row]
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { _, _ in
-            try! self.realm.write({
-                self.realm.delete(editingRow!)
-                tableView.reloadData()
-            })
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { [weak self] (_, indexPath) in
+            guard let self = self, let editingRow = self.result?[indexPath.row] else {
+                return
+            }
+            
+            do {
+                try self.realm.write {
+                    self.realm.delete(editingRow)
+                }
+                // Не вызываем tableView.reloadData() здесь, так как Realm сам обрабатывает удаление данных
+            } catch {
+                print("Error deleting object: \(error)")
+            }
         }
+        
+        // Можно также добавить другие действия (например, "Изменить" или "Поделиться")
+        let addAction = UITableViewRowAction(style: .destructive, title: "ADD") { indexPath, _ in
+            print("все получилсь")
+            
+        }
+        
         return [deleteAction]
     }
-    
+}
 
-    
+extension ViewController: TimesForWorkVCDelegate{
+    func didUpdateData(data: Int) {
+        // присвоить значение?
+        tableView.reloadData()
+    }
 }

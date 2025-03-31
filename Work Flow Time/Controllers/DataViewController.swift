@@ -8,22 +8,27 @@
 import UIKit
 
 class DataViewController: UIViewController {
+    var id = 0
+    var testLabel = UILabel()
+    
 
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        testLabel.frame = CGRect(x: 100, y: 100, width: 200, height: 40)
+        testLabel.text = "testing text for testLabel on our VIEW"
+        view.addSubview(testLabel)
+        
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

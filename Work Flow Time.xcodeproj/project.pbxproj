@@ -25,7 +25,11 @@
 		F055273127EA665700666A22 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055273027EA665700666A22 /* FolderCell.swift */; };
 		F096CA4827EFAC4200F44032 /* TimeWorkModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096CA4727EFAC4200F44032 /* TimeWorkModelRealm.swift */; };
 		F096CA4A27EFACF800F44032 /* AlertTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096CA4927EFACF800F44032 /* AlertTaskModel.swift */; };
+		F0A970662D44261200874647 /* TimerDialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A970652D44261200874647 /* TimerDialVC.swift */; };
 		F0A9C99227F39713005B81D0 /* TimesWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9C99127F39713005B81D0 /* TimesWorkCell.swift */; };
+		F0B884B62D83494E006F0AB7 /* FolderTasksModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B884B52D83494E006F0AB7 /* FolderTasksModelRealm.swift */; };
+		F0D31F3B2D96A070004CA2AC /* DataVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31F3A2D96A070004CA2AC /* DataVCModel.swift */; };
+		F0DA25312D9A5E3300AAF63B /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA25302D9A5E3300AAF63B /* TimerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +78,11 @@
 		F055273027EA665700666A22 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		F096CA4727EFAC4200F44032 /* TimeWorkModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWorkModelRealm.swift; sourceTree = "<group>"; };
 		F096CA4927EFACF800F44032 /* AlertTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTaskModel.swift; sourceTree = "<group>"; };
+		F0A970652D44261200874647 /* TimerDialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDialVC.swift; sourceTree = "<group>"; };
 		F0A9C99127F39713005B81D0 /* TimesWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesWorkCell.swift; sourceTree = "<group>"; };
+		F0B884B52D83494E006F0AB7 /* FolderTasksModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTasksModelRealm.swift; sourceTree = "<group>"; };
+		F0D31F3A2D96A070004CA2AC /* DataVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataVCModel.swift; sourceTree = "<group>"; };
+		F0DA25302D9A5E3300AAF63B /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +194,8 @@
 			children = (
 				F096CA4727EFAC4200F44032 /* TimeWorkModelRealm.swift */,
 				F096CA4927EFACF800F44032 /* AlertTaskModel.swift */,
+				F0B884B52D83494E006F0AB7 /* FolderTasksModelRealm.swift */,
+				F0D31F3A2D96A070004CA2AC /* DataVCModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +206,7 @@
 				F05526F927EA5FDA00666A22 /* ViewController.swift */,
 				F055272C27EA615400666A22 /* DataViewController.swift */,
 				F055272E27EA620000666A22 /* TimesForWorkViewController.swift */,
+				F0A970652D44261200874647 /* TimerDialVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +227,7 @@
 				F05526F727EA5FDA00666A22 /* SceneDelegate.swift */,
 				F055270127EA5FDF00666A22 /* Assets.xcassets */,
 				F055270327EA5FDF00666A22 /* LaunchScreen.storyboard */,
+				F0DA25302D9A5E3300AAF63B /* TimerManager.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -464,10 +476,14 @@
 				F055273127EA665700666A22 /* FolderCell.swift in Sources */,
 				F096CA4827EFAC4200F44032 /* TimeWorkModelRealm.swift in Sources */,
 				F0A9C99227F39713005B81D0 /* TimesWorkCell.swift in Sources */,
+				F0DA25312D9A5E3300AAF63B /* TimerManager.swift in Sources */,
 				F05526F627EA5FDA00666A22 /* AppDelegate.swift in Sources */,
 				F055272D27EA615400666A22 /* DataViewController.swift in Sources */,
 				F05526F827EA5FDA00666A22 /* SceneDelegate.swift in Sources */,
+				F0D31F3B2D96A070004CA2AC /* DataVCModel.swift in Sources */,
 				F096CA4A27EFACF800F44032 /* AlertTaskModel.swift in Sources */,
+				F0A970662D44261200874647 /* TimerDialVC.swift in Sources */,
+				F0B884B62D83494E006F0AB7 /* FolderTasksModelRealm.swift in Sources */,
 				F055270027EA5FDA00666A22 /* Work_Flow_Time.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

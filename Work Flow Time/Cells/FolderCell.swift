@@ -12,11 +12,11 @@ class FolderCell: UITableViewCell {
     let workTaskIdCell = "workTaskIdCell"
     
     @IBOutlet weak var nameTask: UILabel!
-    @IBOutlet weak var totalTimeForThisTask: UILabel!
+    @IBOutlet weak var worksCount: UILabel!
     
     func initCell(data: FolderTasksModelRealm){
         nameTask.text = data.nameArrayTask
-        totalTimeForThisTask.text = String(data.timeWorks.count)
+        worksCount.text = String(data.timeWorks.count)
         //totalTimeForThisTask.text = String(data.timeThemes)
        // totalTimeForThisTask.text = "\(data.totalTimeHour):\(data.totalTimeMin):\(data.totalTimeSec)"
     }
