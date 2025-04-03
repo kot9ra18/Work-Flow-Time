@@ -38,7 +38,7 @@ class ViewController: UIViewController, TimesForWorkViewControllerDelegate {
     
     var realm = try! Realm()
     var result: Results<FolderTasksModelRealm>?
-    var resultTasks: Results<TimeWorkModelRealm>?
+    var resultWorks: Results<TimeWorkModelRealm>?
  
     
     
@@ -69,12 +69,12 @@ class ViewController: UIViewController, TimesForWorkViewControllerDelegate {
         durationSec += 1
         timeLabel.text = String(format: "%02d:%02d:%02d", durationHour, durationMin, durationSec)
 
-        if durationSec > 9 {
+        if durationSec > 59 {
             durationSec = 0
             durationMin += 1
             timeLabel.text = String(format: "%02d:%02d:%02d", durationHour, durationMin, durationSec)
         }
-        if durationMin > 9 {
+        if durationMin > 59 {
             durationMin = 0
             durationHour += 1
             timeLabel.text = String(format: "%02d:%02d:%02d", durationHour, durationMin, durationSec)
@@ -96,14 +96,14 @@ class ViewController: UIViewController, TimesForWorkViewControllerDelegate {
         }
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { action in
-            guard let textMain = alertMainTextField.text, !textMain.isEmpty else {return}
-            guard let textTask = alertTaskTextField.text, !textTask.isEmpty else {return}
+            guard let folderName = alertMainTextField.text, !folderName.isEmpty else {return}
+            guard let workName = alertTaskTextField.text, !workName.isEmpty else {return}
 
             self.timer.invalidate()
             
-                let task = TimeWorkModelRealm.create(withName: textTask)
+                let task = TimeWorkModelRealm.create(withName: workName)
             task.totalTimeTask = "\(self.durationHour):\(self.durationMin):\(self.durationSec)"
-            let mainTask = FolderTasksModelRealm.create(withName: textMain, nameWork: textTask, tasks: [task])
+            let mainTask = FolderTasksModelRealm.create(withName: folderName, nameWork: workName, tasks: [task])
             
                 // Write to Realm
                 print("Write to Realm")
@@ -175,7 +175,7 @@ class ViewController: UIViewController, TimesForWorkViewControllerDelegate {
         // ///Users/aleksandrprohorov/Library/Developer/CoreSimulator/Devices/48933724-22CA-44B3-A9B6-D6D6A45B9A69/data/Containers/Data/Application/8881CC77-A83A-48D8-BE2D-3C97694D7310/Documents/default.realm
         
         result = realm.objects(FolderTasksModelRealm.self)
-        resultTasks = realm.objects(TimeWorkModelRealm.self)
+        resultWorks = realm.objects(TimeWorkModelRealm.self)
     }
 }
 
@@ -225,9 +225,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // Можно также добавить другие действия (например, "Изменить" или "Поделиться")
         let addAction = UITableViewRowAction(style: .destructive, title: "ADD") { indexPath, _ in
             print("все получилсь")
-            
+ 
         }
-        
         return [deleteAction]
     }
 }

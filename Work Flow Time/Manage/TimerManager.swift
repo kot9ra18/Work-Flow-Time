@@ -34,6 +34,10 @@ class TimerManager {
         elapsedTime = Date().timeIntervalSince(startTime)
     }
     
+    func invTimer(){
+        self.timer?.invalidate()
+    }
+    
     func stopTimer() {
         timer?.invalidate()
         timer = nil

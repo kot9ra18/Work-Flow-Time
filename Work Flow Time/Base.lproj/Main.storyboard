@@ -119,7 +119,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.35506772990000002" green="0.4559729099" blue="0.50299477579999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gzT-Fa-VxF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1JY-pn-Efw"/>
                             <constraint firstItem="Bgy-S6-75d" firstAttribute="top" secondItem="gzT-Fa-VxF" secondAttribute="bottom" constant="32" id="9Bb-53-WNr"/>
@@ -172,7 +172,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="3Jf-jR-rTj"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.35506772990000002" green="0.4559729099" blue="0.50299477579999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Data" id="ZLF-Zj-u83"/>
                 </viewController>
@@ -263,7 +263,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xhd-A1-kJv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.35506772990000002" green="0.4559729099" blue="0.50299477579999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Xhd-A1-kJv" firstAttribute="trailing" secondItem="MDq-Hc-wGl" secondAttribute="trailing" id="6kM-8K-y1T"/>
                             <constraint firstItem="Xhd-A1-kJv" firstAttribute="bottom" secondItem="I7M-Fb-Ftb" secondAttribute="bottom" constant="32" id="DG1-M4-pK8"/>
