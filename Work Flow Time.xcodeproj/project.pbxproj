@@ -26,7 +26,6 @@
 		F055272F27EA620000666A22 /* TimesForWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055272E27EA620000666A22 /* TimesForWorkViewController.swift */; };
 		F055273127EA665700666A22 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055273027EA665700666A22 /* FolderCell.swift */; };
 		F096CA4827EFAC4200F44032 /* TimeWorkModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096CA4727EFAC4200F44032 /* TimeWorkModelRealm.swift */; };
-		F096CA4A27EFACF800F44032 /* AlertTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096CA4927EFACF800F44032 /* AlertTaskModel.swift */; };
 		F0A970662D44261200874647 /* TimerDialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A970652D44261200874647 /* TimerDialVC.swift */; };
 		F0A9C99227F39713005B81D0 /* TimesWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9C99127F39713005B81D0 /* TimesWorkCell.swift */; };
 		F0B884B62D83494E006F0AB7 /* FolderTasksModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B884B52D83494E006F0AB7 /* FolderTasksModelRealm.swift */; };
@@ -81,7 +80,6 @@
 		F055272E27EA620000666A22 /* TimesForWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesForWorkViewController.swift; sourceTree = "<group>"; };
 		F055273027EA665700666A22 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		F096CA4727EFAC4200F44032 /* TimeWorkModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWorkModelRealm.swift; sourceTree = "<group>"; };
-		F096CA4927EFACF800F44032 /* AlertTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTaskModel.swift; sourceTree = "<group>"; };
 		F0A970652D44261200874647 /* TimerDialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDialVC.swift; sourceTree = "<group>"; };
 		F0A9C99127F39713005B81D0 /* TimesWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesWorkCell.swift; sourceTree = "<group>"; };
 		F0B884B52D83494E006F0AB7 /* FolderTasksModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTasksModelRealm.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				F096CA4727EFAC4200F44032 /* TimeWorkModelRealm.swift */,
-				F096CA4927EFACF800F44032 /* AlertTaskModel.swift */,
 				F0B884B52D83494E006F0AB7 /* FolderTasksModelRealm.swift */,
 				F0D31F3A2D96A070004CA2AC /* DataVCModel.swift */,
 			);
@@ -497,7 +494,6 @@
 				F01BBAF52D9C6925005538AA /* RealmManager.swift in Sources */,
 				F05526F827EA5FDA00666A22 /* SceneDelegate.swift in Sources */,
 				F0D31F3B2D96A070004CA2AC /* DataVCModel.swift in Sources */,
-				F096CA4A27EFACF800F44032 /* AlertTaskModel.swift in Sources */,
 				F0A970662D44261200874647 /* TimerDialVC.swift in Sources */,
 				F0B884B62D83494E006F0AB7 /* FolderTasksModelRealm.swift in Sources */,
 				F055270027EA5FDA00666A22 /* Work_Flow_Time.xcdatamodeld in Sources */,

@@ -44,7 +44,7 @@ class TimerManager {
         
         // Save the result to Realm here
         saveElapsedTime(elapsedTime)
-        
+        print("---------------", elapsedTime)
         elapsedTime = 0
         startTime = nil
     }

@@ -5,7 +5,8 @@ target 'Work Flow Time' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-	pod 'RealmSwift'
+	pod 'RealmSwift', '~> 10.28.2'
+	pod 'SnapKit'
 
   # Pods for Work Flow Time
 

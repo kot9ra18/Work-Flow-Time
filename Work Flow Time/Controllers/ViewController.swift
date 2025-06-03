@@ -39,6 +39,8 @@ class ViewController: UIViewController, TimesForWorkViewControllerDelegate {
     var realm = try! Realm()
     var result: Results<FolderTasksModelRealm>?
     var resultWorks: Results<TimeWorkModelRealm>?
+    
+    var timer2 = TimerManager.shared
  
     
     
@@ -128,7 +130,7 @@ class ViewController: UIViewController, TimesForWorkViewControllerDelegate {
                 self.startButtonOutlet.isHidden = false
             }
         }
-        
+                
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
@@ -168,11 +170,12 @@ class ViewController: UIViewController, TimesForWorkViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        timeLabel.text = "00:00:00"
+        timeLabel.text = String(format: "%02d:%02d:%02d:%03d") //"00:00:00"
 
         
         let path = Realm.Configuration.defaultConfiguration.fileURL
-        // ///Users/aleksandrprohorov/Library/Developer/CoreSimulator/Devices/48933724-22CA-44B3-A9B6-D6D6A45B9A69/data/Containers/Data/Application/8881CC77-A83A-48D8-BE2D-3C97694D7310/Documents/default.realm
+        //print("________-----------____________", path)
+        // ///Users/aleksandrprohorov/Library/Developer/CoreSimulator/Devices/48933724-22CA-44B3-A9B6-D6D6A45B9A69/data/Containers/Data/Application/0B01E835-60E9-49D6-8519-DA450203BE81/Documents/default.realm
         
         result = realm.objects(FolderTasksModelRealm.self)
         resultWorks = realm.objects(TimeWorkModelRealm.self)
@@ -192,7 +195,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: workTaskCell) as! FolderCell
         
         cell.initCell(data: realm.objects(FolderTasksModelRealm.self)[indexPath.row])
-       print(realm.objects(FolderTasksModelRealm.self).description)
+       //print(realm.objects(FolderTasksModelRealm.self).description)
         return cell
     }
     

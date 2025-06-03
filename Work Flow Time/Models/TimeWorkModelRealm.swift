@@ -24,12 +24,19 @@ class TimeWorkModelRealm: Object {
         return task
     }
     
+    func addTime(second: Int) -> String{
+        totalTimeSec = totalTimeSec + second
+        totalTimeMin = totalTimeSec / 60
+        totalTimeHour = totalTimeSec / 3600
+        return "\(totalTimeHour), \(totalTimeMin), \(totalTimeSec - (totalTimeHour * 3600) - (totalTimeMin * 60))"
+    }
+    
     func addTotalTime(sec: Int, min: Int, hour: Int) -> String {
         totalTimeSec = totalTimeSec + sec
-        if totalTimeSec > 9 {totalTimeMin += 1}
+        if totalTimeSec > 59 {totalTimeMin += 1}
         
         totalTimeMin = totalTimeMin + min
-        if totalTimeMin > 9 {totalTimeHour += 1}
+        if totalTimeMin > 59 {totalTimeHour += 1}
         
         totalTimeHour = totalTimeHour + hour
         

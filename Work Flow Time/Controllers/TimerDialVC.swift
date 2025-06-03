@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 class TimerDialViewController: UIViewController {
     
@@ -8,8 +9,43 @@ class TimerDialViewController: UIViewController {
     private var secondHand: CAShapeLayer!
     private var milisecondHand: CAShapeLayer!
     
+    private var startDate: Date?
+    var startTimerButton = UIButton(type: .custom)
+    var stopTimerButton = UIButton(type: .custom)
+    
+    var timer = TimerManager.shared
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+        startTimerButton.addTarget(self, action: #selector(startButtonAction(_:)), for: .touchUpInside)
+        stopTimerButton.addTarget(self, action: #selector(stopButtonAction(_:)), for: .touchUpInside)
+
+       
+        // Запускаем таймер
+       //startTimer()
+    }
+    
+    private func setupViews(){
+        
+        startTimerButton.frame = CGRect(x: view.bounds.width-105, y: view.bounds.height*0.2, width: 100, height: 50)
+        startTimerButton.setTitle("START", for: .normal)
+        startTimerButton.tintColor = .black
+        startTimerButton.backgroundColor = .green
+        startTimerButton.layer.cornerRadius = 15
+        startTimerButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(startTimerButton)
+        
+        stopTimerButton.frame = CGRect(x: view.bounds.width-105, y: view.bounds.height*0.27, width: 100, height: 50)
+        stopTimerButton.setTitle("STOP", for: .normal)
+        stopTimerButton.tintColor = .black
+        stopTimerButton.backgroundColor = .lightGray
+        stopTimerButton.layer.cornerRadius = 15
+        stopTimerButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stopTimerButton)
+        
         
         // Настраиваем фон
         view.backgroundColor = UIColor.systemBackground
@@ -75,9 +111,26 @@ class TimerDialViewController: UIViewController {
         timeLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
         timeLabel.layer.shadowRadius = 2
         dialView.addSubview(timeLabel)
+    }
+    
+    @objc func startButtonAction(_ sender: UIButton) {
+        // Начало измерения времени
+        startDate = Date()
+        
+        print("New button start is started")
         
         // Запускаем таймер
+        //timer.startTimer()
         startTimer()
+        }
+    
+    @objc func stopButtonAction(_ sender: UIButton) {
+        // Сбрасываем начальное время
+        startDate = nil
+        print("__________----------STOP TIMER____________------------")
+        // Останавливаем таймер
+        // Тут надо сохранить ссылку на таймер и вызвать invalidate(), но мы пока можем оставить так
+        timer.invTimer()
     }
     
     // Функция создания стрелки
@@ -135,24 +188,54 @@ class TimerDialViewController: UIViewController {
     
     // Обновление времени
     private func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            let now = Date()
-            let calendar = Calendar.current
-            let hours = calendar.component(.hour, from: now)
-            let minutes = calendar.component(.minute, from: now)
-            let seconds = calendar.component(.second, from: now)
-            
-            // Обновляем лейбл
-            self.timeLabel.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-            
-            // Обновляем стрелки
-            let secondAngle = CGFloat(seconds) * CGFloat.pi / 30
-            let minuteAngle = (CGFloat(minutes) + CGFloat(seconds) / 60) * CGFloat.pi / 30
-            let hourAngle = (CGFloat(hours % 12) + CGFloat(minutes) / 60) * CGFloat.pi / 6
-            
-            self.secondHand.transform = CATransform3DMakeRotation(secondAngle, 0, 0, 1)
-            self.minuteHand.transform = CATransform3DMakeRotation(minuteAngle, 0, 0, 1)
-            self.hourHand.transform = CATransform3DMakeRotation(hourAngle, 0, 0, 1)
+        timer.startTimer()
+           let currentDate = Date()
+           
+           // Начинаем отсчет только если установлено стартовое время
+           guard let startDate = startDate else { return }
+           
+           // Прошедшее время с момента старта
+           let elapsedTime = currentDate.timeIntervalSince(startDate)
+           
+           // Конвертируем в часы, минуты и секунды
+           let hours = Int(elapsedTime / 3600)
+           let minutes = Int((elapsedTime.truncatingRemainder(dividingBy: 3600)) / 60)
+           let seconds = Int(elapsedTime.truncatingRemainder(dividingBy: 60))
+           
+           // Обновляем лейбл
+           self.timeLabel.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+           
+           // Обновляем стрелки (при желании)
+           let secondAngle = CGFloat(seconds) * CGFloat.pi / 30
+           let minuteAngle = (CGFloat(minutes) + CGFloat(seconds) / 60) * CGFloat.pi / 30
+           let hourAngle = (CGFloat(hours % 12) + CGFloat(minutes) / 60) * CGFloat.pi / 6
+           
+           self.secondHand.transform = CATransform3DMakeRotation(secondAngle, 0, 0, 1)
+           self.minuteHand.transform = CATransform3DMakeRotation(minuteAngle, 0, 0, 1)
+           self.hourHand.transform = CATransform3DMakeRotation(hourAngle, 0, 0, 1)
+        
+//        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+//            let now = Date()
+//            let startTime = Date()
+//            var elTime = Date().timeIntervalSince(startTime)
+//            let calendar = Calendar.current
+//            let hours = calendar.component(.hour, from: now)
+//            let minutes = calendar.component(.minute, from: now)
+//            let seconds = calendar.component(.second, from: now)
+//
+//            // Обновляем лейбл
+//            self.timeLabel.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+//
+//            // Обновляем стрелки
+//            let secondAngle = CGFloat(seconds) * CGFloat.pi / 30
+//            let minuteAngle = (CGFloat(minutes) + CGFloat(seconds) / 60) * CGFloat.pi / 30
+//            let hourAngle = (CGFloat(hours % 12) + CGFloat(minutes) / 60) * CGFloat.pi / 6
+//
+//            self.secondHand.transform = CATransform3DMakeRotation(secondAngle, 0, 0, 1)
+//            self.minuteHand.transform = CATransform3DMakeRotation(minuteAngle, 0, 0, 1)
+//            self.hourHand.transform = CATransform3DMakeRotation(hourAngle, 0, 0, 1)
         }
     }
-}
+    
+    
+

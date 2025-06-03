@@ -17,7 +17,7 @@ class FolderTasksModelRealm: Object{
     func addTotalTimeWorkThemes(data: [TimeWorkModelRealm]) {
         for i in data {
             timeThemes += Int(i.totalTimeTask) ?? 99
-        }
+        }   
     }
 
     static func create(withName name: String, nameWork work: String, tasks: [TimeWorkModelRealm]) -> FolderTasksModelRealm {
